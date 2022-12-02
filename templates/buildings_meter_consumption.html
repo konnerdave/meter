@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Meter Consumption Data</h1>
+
+{% if meter_id %}
+<h3><a href="{% url 'meter_chart' meter_id %}">Chart View</a></h3>
+{% endif %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Meter ID</th>
+        <th scope="col">Consumption</th>
+        <th scope="col">Reading At</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for data in meter_consumption_data %}
+      <tr>
+        <th scope="row">{{data.id}}</th>
+        <td>{{data.meter.id}}</td>
+        <td>{{data.consumption}}</td>
+        <td>{{data.reading_at}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

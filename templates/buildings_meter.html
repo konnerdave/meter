@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h1>Building Meter Data</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Building ID</th>
+        <th scope="col">Fuel Type</th>
+        <th scope="col">Unit</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for data in meter_data %}
+      <tr>
+        <th scope="row"><a href="{% url 'meter_consumption' data.id %}">{{data.id}}</a></th>
+        <td>{{data.building.id}}</td>
+        <td>{{data.fuel_type}}</td>
+        <td>{{data.unit}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

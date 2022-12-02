@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>CSV Upload</h1>
+
+    <form method="post" action="{% url 'CsvUpload' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        <h6> Building Data -: <br>
+            <input type="file" name="building_data" required>
+        </h6>
+
+        <h6> HalfHourly Data -: <br>
+        <input type="file" name="halfhourly_data" required>
+        </h6>
+
+        <h6> Meter Data -: <br>
+        <input type="file" name="meter_data" required>
+        </h6><br>
+
+        <button type="submit">Upload</button>
+    </form>
+
+    {% comment %} <div class="file-upload">
+        <div class="file-select">
+          <div class="file-select-button" id="fileName">Choose File</div>
+          <div class="file-select-name" id="noFile">No file chosen...</div> 
+          <input type="file" name="chooseFile" id="chooseFile">
+        </div>
+      </div> {% endcomment %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+# VS Code
+.vscode
+
+# Django
+*.env
+*.log
+*.pot
+*.pyc
+__pycache__
+staticfiles
+db.sqlite3
+
+
+# Backup files
+*.bak
+
+
+# Unit test / coverage reports 
+*.cover
+.coverage 
+.coverage.* 
+.cache 
+.hypothesis/
+.pytest_cache/ 
+.tox/ 
+coverage.xml 
+htmlcov/ 
+nosetests.xml
+
+.DS_Store
